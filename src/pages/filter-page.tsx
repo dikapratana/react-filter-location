@@ -1,5 +1,3 @@
-/* ================= LOADER ================= */
-
 import { useMemo } from "react";
 import { useLoaderData, useSearchParams } from "react-router-dom";
 
@@ -42,6 +40,8 @@ interface SelectFieldProps {
   onChange: (value: string) => void;
   value: string;
 }
+
+/* ================= LOADER ================= */
 
 // eslint-disable-next-line react-refresh/only-export-components
 export async function loader(): Promise<RegionsData> {
