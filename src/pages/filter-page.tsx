@@ -26,6 +26,23 @@ interface RegionsData {
   districts: District[];
 }
 
+interface ResultBlockProps {
+  label: string;
+  value: string;
+  arrow?: boolean;
+}
+
+interface SelectFieldProps {
+  label: string;
+  options: { label: string; value: string }[];
+  name: string;
+  icon: React.ReactNode;
+  placeholder: string;
+  disabled?: boolean;
+  onChange: (value: string) => void;
+  value: string;
+}
+
 // eslint-disable-next-line react-refresh/only-export-components
 export async function loader(): Promise<RegionsData> {
   const response = await fetch("/data/indonesia_regions.json");
@@ -241,15 +258,7 @@ function parseId(value: string | null): number | null {
   return Number.isNaN(parsed) ? null : parsed;
 }
 
-function ResultBlock({
-  label,
-  value,
-  arrow,
-}: {
-  label: string;
-  value: string;
-  arrow?: boolean;
-}) {
+function ResultBlock({ label, value, arrow }: ResultBlockProps) {
   return (
     <div className="text-center flex flex-col justify-center items-center">
       <p className="text-sm font-bold tracking-[0.22em] text-blue-400">
@@ -260,7 +269,7 @@ function ResultBlock({
       </h3>
       {arrow && (
         <div className="my-8">
-          <ArrowDownIcon className="text-neutral-400 w-8 opacity-45" />
+          <ArrowDownIcon />
         </div>
       )}
     </div>
@@ -276,16 +285,7 @@ function SelectField({
   disabled = false,
   onChange,
   value,
-}: {
-  label: string;
-  options: { label: string; value: string }[];
-  name: string;
-  icon: React.ReactNode;
-  placeholder: string;
-  disabled?: boolean;
-  onChange: (value: string) => void;
-  value: string;
-}) {
+}: SelectFieldProps) {
   return (
     <div>
       <label htmlFor={name} className="text-[10px] font-bold text-neutral-500">
@@ -440,7 +440,7 @@ function ResetIcon() {
   );
 }
 
-function ArrowDownIcon({ className = "" }) {
+function ArrowDownIcon() {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -449,7 +449,7 @@ function ArrowDownIcon({ className = "" }) {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className={className}
+      className="text-neutral-400 w-8 opacity-45"
     >
       <path d="M12 5v14" />
       <path d="M19 12l-7 7-7-7" />
