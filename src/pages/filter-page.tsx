@@ -153,6 +153,7 @@ export default function FilterPage() {
               value: regency.id.toString(),
             }))}
             icon={<BuildingIcon />}
+            disabled={!selectedProvince}
             onChange={(e) => updateSearchParams("regency", e)}
           />
           <SelectField
@@ -165,6 +166,7 @@ export default function FilterPage() {
               value: district.id.toString(),
             }))}
             icon={<LocationIcon />}
+            disabled={!selectedRegency}
             onChange={(e) => updateSearchParams("district", e)}
           />
 
@@ -360,15 +362,15 @@ function LocationIcon() {
       stroke="currentColor"
     >
       <path
-        stroke-width="1.8"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         d="M12 21s7-4.6 7-11a7 7 0 1 0-14 0c0 6.4 7 11 7 11Z"
       ></path>
       <path
-        stroke-width="1.8"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         d="M12 10.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"
       ></path>
     </svg>
@@ -384,21 +386,21 @@ function MapPinIcon() {
       stroke="currentColor"
     >
       <path
-        stroke-width="1.8"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         d="M9 18 3 21V6l6-3 6 3 6-3v15l-6 3-6-3Z"
       ></path>
       <path
-        stroke-width="1.8"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         d="M9 3v15"
       ></path>
       <path
-        stroke-width="1.8"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         d="M15 6v15"
       ></path>
     </svg>
