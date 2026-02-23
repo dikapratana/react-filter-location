@@ -179,7 +179,7 @@ export default function FilterPage() {
         </div>
       </aside>
 
-      <main className="grid grid-rows-[56px_1fr] w-full">
+      <div className="grid grid-rows-[56px_1fr] w-full">
         <div className="breadcrumb flex items-center gap-2 border-b border-neutral-300 bg-white px-4 text-[11px] font-semibold text-neutral-500 md:px-6">
           <span>Indonesia</span>
           {breadcrumbRegions.map((region, index) => (
@@ -198,7 +198,7 @@ export default function FilterPage() {
           ))}
         </div>
 
-        <div className="grid place-content-center gap-4 px-3 py-8 md:py-6">
+        <main className="grid place-content-center gap-4 px-3 py-8 md:py-6">
           {!hasSelectedRegion && (
             <p className="text-center text-sm font-semibold text-neutral-500">
               Wilayah belum dipilih
@@ -221,8 +221,8 @@ export default function FilterPage() {
           {selectedDistrict?.name && (
             <ResultBlock label="KECAMATAN" value={selectedDistrict.name} />
           )}
-        </div>
-      </main>
+        </main>
+      </div>
     </div>
   );
 }
