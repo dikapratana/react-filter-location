@@ -120,8 +120,8 @@ export default function FilterPage() {
   ].filter(Boolean) as string[];
 
   return (
-    <div className="min-h-screen bg-gray-100 md:flex">
-      <aside className="w-full md:w-80 border-b border-neutral-300 bg-gray-100 px-4 py-5 md:border-r md:border-b-0">
+    <div className="min-h-screen bg-slate-50 md:flex">
+      <aside className="w-full md:w-80 border-b border-neutral-200 bg-slate-50 px-4 py-5 md:border-r md:border-b-0">
         <header className="mb-10 flex items-center gap-2.5">
           <span className="size-5 rounded-full bg-blue-500" />
           <h1 className="text-base font-bold text-neutral-800 flex">
@@ -180,7 +180,7 @@ export default function FilterPage() {
       </aside>
 
       <div className="grid grid-rows-[56px_1fr] w-full">
-        <div className="breadcrumb flex items-center gap-2 border-b border-neutral-300 bg-white px-4 text-[11px] font-semibold text-neutral-500 md:px-6">
+        <div className="breadcrumb flex items-center gap-2 border-b border-neutral-200 bg-white px-4 text-[11px] font-semibold text-neutral-500 md:px-6">
           <span>Indonesia</span>
           {breadcrumbRegions.map((region, index) => (
             <div key={region} className="contents">
@@ -332,7 +332,13 @@ function ChevronDown() {
 
 function BuildingIcon() {
   return (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+    <svg
+      width="14"
+      height="14"
+      viewBox="0 0 24 24"
+      fill="none"
+      className="h-4 w-4"
+    >
       <path d="M4 20H20" stroke="currentColor" strokeWidth="1.8" />
       <path d="M7 20V8L12 5L17 8V20" stroke="currentColor" strokeWidth="1.8" />
       <path
@@ -347,35 +353,67 @@ function BuildingIcon() {
 
 function LocationIcon() {
   return (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-      <circle cx="12" cy="12" r="7" stroke="currentColor" strokeWidth="1.8" />
-      <circle cx="12" cy="12" r="2.5" stroke="currentColor" strokeWidth="1.8" />
+    <svg
+      viewBox="0 0 24 24"
+      className="h-4 w-4"
+      fill="none"
+      stroke="currentColor"
+    >
+      <path
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M12 21s7-4.6 7-11a7 7 0 1 0-14 0c0 6.4 7 11 7 11Z"
+      ></path>
+      <path
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M12 10.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"
+      ></path>
     </svg>
   );
 }
 
 function MapPinIcon() {
   return (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+    <svg
+      viewBox="0 0 24 24"
+      className="h-4 w-4"
+      fill="none"
+      stroke="currentColor"
+    >
       <path
-        d="M12 21C12 21 18 15.8 18 10.8C18 7.04 15.31 4 12 4C8.69 4 6 7.04 6 10.8C6 15.8 12 21 12 21Z"
-        stroke="currentColor"
-        strokeWidth="1.8"
-      />
-      <circle
-        cx="12"
-        cy="10.5"
-        r="2.2"
-        stroke="currentColor"
-        strokeWidth="1.8"
-      />
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M9 18 3 21V6l6-3 6 3 6-3v15l-6 3-6-3Z"
+      ></path>
+      <path
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M9 3v15"
+      ></path>
+      <path
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M15 6v15"
+      ></path>
     </svg>
   );
 }
 
 function ResetIcon() {
   return (
-    <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+    <svg
+      width="12"
+      height="12"
+      viewBox="0 0 24 24"
+      fill="none"
+      className="h-4 w-4"
+    >
       <path
         d="M20 6V11H15"
         stroke="currentColor"
